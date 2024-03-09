@@ -58,7 +58,7 @@ server {
 ### sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 ### sudo systemctl reload nginx
 
-###### create user for database in phpmyadmin
+#### create user for database in phpmyadmin with host %
 
 ### sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
