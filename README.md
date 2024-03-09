@@ -10,7 +10,8 @@
 ### sudo nano /etc/nginx/sites-available/default
 
 ### add this content
-```server {
+```
+server {
         listen 80 default_server;
         listen [::]:80 default_server;
 
