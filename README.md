@@ -1,15 +1,16 @@
 # server-setup
-sudo apt update
-sudo apt install nginx
-sudo ufw app list
-sudo ufw allow 'Nginx Full'
-sudo apt install mysql-server
-sudo apt install php-fpm php-mysql
 
-sudo nano /etc/nginx/sites-available/default
+# sudo apt update
+# sudo apt install nginx
+# sudo ufw app list
+# sudo ufw allow 'Nginx Full'
+# sudo apt install mysql-server
+# sudo apt install php-fpm php-mysql
 
-add this content
-server {
+# sudo nano /etc/nginx/sites-available/default
+
+# add this content
+```server {
         listen 80 default_server;
         listen [::]:80 default_server;
 
@@ -41,51 +42,50 @@ server {
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
     }
 }
+```
 
+# sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
 
-sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
+# sudo mysql
 
-sudo mysql
+# ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY '77RuankZuank$Mk@123';
 
-ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY '77RuankZuank$Mk@123';
+# SELECT user,authentication_string,plugin,host FROM mysql.user;
 
-SELECT user,authentication_string,plugin,host FROM mysql.user;
+# exit
 
-exit
+# sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+# sudo systemctl reload nginx
 
-sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
-sudo systemctl reload nginx
+## create user for database in phpmyadmin
 
-create user for database in phpmyadmin
-
-sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+# sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+```
 bind-address            = 127.0.0.1
 update with 
 bind-address            = 0.0.0.0
-sudo systemctl restart mysql
+```
+# sudo systemctl restart mysql
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
-source ~/.bashrc
- nvm --version
+# source ~/.bashrc
+# nvm --version
+# nvm install 14.15.4
+# node --version
+# npm --version
 
-~# nvm install 14.15.4
-~# node --version
-~# npm --version
+# git clone https://github.com/{ownerName}/{repoName}.git
 
-~# git clone https://github.com/{ownerName}/{repoName}.git
-RaviMrk
-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
+# cd ./directory-name
+# npm install
 
-~# cd ./directory-name
-~# npm install
+# npm i -g pm2
 
-~# npm i -g pm2
+# pm2 start ./server.js
 
-~# pm2 start ./server.js
+# nano /etc/nginx/sites-available/default
 
-~# nano /etc/nginx/sites-available/default
+# nginx -t
 
-~# nginx -t
-
-~# systemctl restart nginx
+# systemctl restart nginx
